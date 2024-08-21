@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="StyleSheet.css" />
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <h1>לוח טיסות</h1>
+
+        <div class="search">
+            <div>
+                <input class="btn" type="button" value="המראות" onclick="dtype()" />
+                <input class="btn" type="button" value="נחיתות" onclick="atype()" />
+            </div>
+            <div id="grid-container">
+                <span>
+                    מספר טיסה
+                    <input id="number" type="text" placeholder="הקלד מספר טיסה" />
+                </span>
+                <span>
+                    מתאריך
+                    <input id="startDate" type="text" placeholder="DD-MM-YYYY" />
+                </span>
+                <span>
+                    ועד תאריך
+                    <input id="endDate" type="text" placeholder="DD-MM-YYYY" />
+                </span>
+                <span>
+                    מדינה
+                    <input id="country" type="text" placeholder="הקלד שם מדינה" />
+                </span>
+                <span>
+                    עיר
+                    <input id="city" type="text" placeholder="הקלד שם עיר" />
+                </span>
+            </div>
+            <div id="btnsearch"><input class="btn" type="button" value="חפש" onclick="searchFlights()" /></div>
+        </div>
+        <div id="flightChart"></div> 
+        <div id="flightDetails">
+            <h2>פרטי טיסה</h2>
+            <div id="detailsContent">
+
+            </div>
+            <div id="btnclose"><input class="btn" type="button" value="סגור" onclick="closeFlightDetails()" /></div>
+        </div>
+
+        <div>
+            <table id="content-table">
+                <thead>
+                    <tr>
+                        <th>חברת התעופה</th>
+                        <th >מספר טיסה</th>
+                        <th>זמן מתוכנן</th>
+                        <th>זמן בפועל</th>
+                        <th>סוג הטיסה</th>
+                        <th>טרמינל</th>
+                        <th>מדינה</th>
+                        <th>עיר</th>
+                        <th>סטטוס</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable"></tbody>
+            </table>
+        </div>
+    </div>
+    <img src="images/liftoff1.png" id="plane" />
+    <script src="Flights.js"></script>
+    <script src="JavaScript.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</body>
+</html>
